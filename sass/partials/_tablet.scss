@@ -1,0 +1,148 @@
+.burger_menu {
+  cursor: pointer;
+  padding:0 20px;
+  height:100%;
+  background:$brand-light;
+  display: none;
+  float:right;
+}
+.burger_menu span {
+  background: $brand-primary;
+  height: 3px;
+  width: 32px;
+  display: block;
+  position: relative;
+  margin-top:40px;
+  transition:all ease 0.1s;
+}
+.burger_menu span:after, .burger_menu span:before {
+  background: $brand-primary;
+  height: 3px;
+  width: 32px;
+  display: block;
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 7px;
+  transition:all ease 0.2s;
+}
+.burger_menu span:before {
+  top: -7px;
+}
+/* Open Menu */
+.burger_menu.open span {
+	background:transparent;
+}
+.burger_menu.open span:before {
+	transform:rotate(45deg);
+	top:0;
+}
+.burger_menu.open span:after {
+	transform:rotate(-45deg);
+	top:0;
+}
+
+@media screen and (max-width:768px) {
+	.hero {
+		height:500px;
+
+		.text {
+			transform:none;
+			top:0;
+			position:relative;
+			padding-top:190px;
+
+			h1 {
+				line-height: 80px;
+			}
+		}
+	}
+	.services {
+		.service {
+			margin-top:0;
+			margin-bottom:30px;
+		}
+	}
+
+	header nav {
+		position:absolute;
+		top:80px;
+		left:0;
+		width:100%;
+		height:auto;
+		background:$brand-light;
+		opacity: 0;
+		visibility: hidden;
+		transform:translateY(50px);
+		transition:all ease 0.3s;
+
+		&.open {
+			opacity: 1;
+			transform:translateY(0px);
+			visibility: visible;
+		}
+
+		ul li {
+			display: block;
+			float:left;
+			width:50%;
+			margin:0;
+
+			a {
+				display: block;
+				padding:30px 0;
+				text-align:center;
+				border-bottom:1px solid #ccc;
+				border-right:1px solid #ccc;
+
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.burger_menu {
+		display: block;
+	}
+
+	header {
+
+		.wrapper {
+			height:80px;
+			padding:0;
+			position: relative;
+		}
+	}
+
+	header .logo {
+		width:180px;
+		margin-left:30px;
+	}
+}
+
+@media screen and (max-width:480px) {
+	section.call-us h3 {
+		line-height: 60px;
+
+		span {
+			display: block;
+		}
+	}
+
+	header nav {
+		ul li {
+			width:100%;
+		}
+	}
+
+	.hero .text h1 {
+		font-size:45px;
+		line-height: 50px;
+	}
+
+	p.popup, .infoButton {
+		display: none;
+	}
+
+}
